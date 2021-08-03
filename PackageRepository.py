@@ -8,20 +8,20 @@ class PackageRepository:
         for i in range(capacity):
             self.table.append([])
 
-    def insert(self, package):
+    def insert(self, package_id):
         """Inserts a new package into the repository"""
-        bucket_num = hash(package) % len(self.table)
+        bucket_num = hash(package_id) % len(self.table)
         bucket_list = self.table[bucket_num]
 
-        bucket_list.append(package)
+        bucket_list.append(package_id)
 
-    def search(self, key):
-        """Searches for package by the key and returns it."""
-        bucket_num = hash(key) % len(self.table)
+    def search(self, package_id):
+        """Searches for package by the id and returns it."""
+        bucket_num = hash(package_id) % len(self.table)
         bucket_list = self.table[bucket_num]
 
-        if key in bucket_list:
-            package_id = bucket_list.index(key)
+        if package_id in bucket_list:
+            package_id = bucket_list.index(package_id)
             return bucket_list[package_id]
         else:
             return None 
