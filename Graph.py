@@ -1,6 +1,7 @@
 class Graph:
     def __init__(self):
         self.adjacency_list = {} #dictionary -> key (address/vertex) and values (list of vertices)
+        self.edge_weights = {}
   
     def add_vertex(self, new_vertex):
         self.adjacency_list[new_vertex] = [] #list of vertices
