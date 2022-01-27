@@ -2,7 +2,7 @@ import PackageRepository
 
 class Truck:
     def __init__(self, capacity, speed):
-        self.packages = PackageRepository
+        self.packages = PackageRepository(16)
         self.capacity = capacity
         self.speed = speed
 
