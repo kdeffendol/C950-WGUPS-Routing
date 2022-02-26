@@ -19,5 +19,13 @@ class PackageRepositoryTests(unittest.TestCase):
 
         self.assertEqual(None, repo.search(123))
 
+    def test_SearchPackageFromRepository(self):
+        repo = PackageRepository(10)
+        package = Package(123, "", "City", "55555", "", 3.1, "")
+        package2 = Package(50, "", "City", "55555", "", 3.1, "")
+        repo.insert(package)
+        repo.insert(package2)
+        self.assertEqual(package, repo.search(123))
+
 if __name__ == '__main__':
     unittest.main()

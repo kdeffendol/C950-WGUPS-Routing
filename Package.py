@@ -10,3 +10,5 @@ class Package:
         self.deadline = deadline
         self.weight = weight
         self.notes = notes
+        self.status = 'Not Delivered'
+        self.timestamp = 0.0
